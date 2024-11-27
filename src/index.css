@@ -13,6 +13,76 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  margin-top: 0;
+}
+
+.name {
+  font-size: 1.45em;
+  font-style: italic;
+
+  margin-top: 0;
+}
+
+h2 {
+  margin-top: 15px;
+}
+
+figure {
+  margin: 0;
+}
+
+figure:nth-child(2) {
+  margin-top: 20px;
+}
+
+figcaption > span {
+  font-weight: bold;
+}
+
+.logos {
+  margin: 20px 0;
+}
+
+.logos img {
+  width: 350px;
+  height: 250px;
+
+  border: 1px solid;
+}
+
+@media only screen and (min-width: 950px) {
+  .logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 40px;
+
+    margin: 20px;
+  }
+
+  figure:nth-child(2) {
+    margin-top: 0;
+  }
+
+  #root {
+    margin: 50px auto;
+    box-shadow: 0px 6px 10px 2px rgba(0, 0, 0, 0.5);
+  }
+}
+
 a {
   font-weight: 500;
   color: #646cff;

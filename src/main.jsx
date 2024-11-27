@@ -53,7 +53,6 @@ createRoot(document.getElementById("root")).render(
         state, and local authorities to broadcast alerts across radio,
         television, and mobile devices.{" "}
       </p>
-      <EmergencyGenerator />
       <p>
         EAS alerts are categorized into four types: National/Presidential Alerts
         – Reserved for use by the President during national emergencies.
@@ -61,6 +60,9 @@ createRoot(document.getElementById("root")).render(
         weather. AMBER Alerts – Issued for missing or abducted children. Public
         Safety Alerts – Provide general warnings about potential threats.
       </p>
+      <div className="interactive-eas">
+        <EmergencyGenerator />
+      </div>
       <p>
         As noted by the Georgia Institute of Technology, EAS broadcasts can
         reach broad audiences but rely on loud, intrusive tones and wide

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./EmergencyGenerator.css";
+import "../styles/EmergencyGenerator.css";
 
 function EmergencyGenerator() {
   return (

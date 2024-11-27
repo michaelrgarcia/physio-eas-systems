@@ -5,7 +5,7 @@ import "./index.css";
 import EASLogo from "../public/EAS.svg";
 import WEASymbol from "./assets/WEAsymbol.png";
 
-import EmergencyGenerator from "./EmergencyGenerator.jsx";
+import EmergencyGenerator from "./components/EmergencyGenerator.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

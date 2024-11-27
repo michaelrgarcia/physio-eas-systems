@@ -5,7 +5,7 @@ import "./index.css";
 import EASLogo from "../public/EAS.svg";
 import WEASymbol from "./assets/WEAsymbol.png";
 
-import EASSystem from "./EASSystem.jsx";
+import EmergencyGenerator from "./EmergencyGenerator";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -44,6 +44,29 @@ createRoot(document.getElementById("root")).render(
         of WEAs over EAS, while addressing gaps in accessibility and equity.
       </p>
     </section>
-    <EASSystem />
+    <section className="eas-system">
+      <h2>Understanding the EAS System</h2>
+      <p>
+        The Emergency Alert System (EAS), operational since 2012, is part of the
+        Integrated Public Alert and Warning System (IPAWS). Initially developed
+        after the September 11, 2001, terrorist attacks, it enables federal,
+        state, and local authorities to broadcast alerts across radio,
+        television, and mobile devices.{" "}
+      </p>
+      <EmergencyGenerator />
+      <p>
+        EAS alerts are categorized into four types: National/Presidential Alerts
+        – Reserved for use by the President during national emergencies.
+        Imminent Threat Alerts – Focused on local-level hazards, such as extreme
+        weather. AMBER Alerts – Issued for missing or abducted children. Public
+        Safety Alerts – Provide general warnings about potential threats.
+      </p>
+      <p>
+        As noted by the Georgia Institute of Technology, EAS broadcasts can
+        reach broad audiences but rely on loud, intrusive tones and wide
+        dissemination. This approach often leads to over-alerting, which risks
+        desensitizing the public and creating unnecessary stress responses.
+      </p>
+    </section>
   </StrictMode>
 );

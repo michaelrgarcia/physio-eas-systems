@@ -6,6 +6,7 @@ import EASLogo from "../public/EAS.svg";
 import WEASymbol from "./assets/WEAsymbol.png";
 
 import EmergencyGenerator from "./components/EmergencyGenerator.jsx";
+import StressResponse from "./components/StressResponse.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -64,10 +65,27 @@ createRoot(document.getElementById("root")).render(
         <EmergencyGenerator />
       </div>
       <p>
-        As noted by the Georgia Institute of Technology, EAS broadcasts can
-        reach broad audiences but rely on loud, intrusive tones and wide
-        dissemination. This approach often leads to over-alerting, which risks
-        desensitizing the public and creating unnecessary stress responses.
+        Clearly, EAS broadcasts can reach broad audiences but rely on loud,
+        intrusive tones and wide dissemination. This approach often leads to
+        over-alerting, which risks desensitizing the public and creating
+        unnecessary stress responses. (Georgia Institute of Technology)
+      </p>
+      <h2>The Physiological Stress Response and Emergency Alerts</h2>
+      <p>
+        Emergency alerts are known to trigger the body’s physiological stress
+        response, a survival mechanism that prepares the body for threats. This
+        response consists of an increased heart rate, elevated cortisol levels,
+        and heightened arousal. Research indicates that loud, abrupt emergency
+        tones can exacerbate acute stress responses, impairing cognitive
+        functions and decision-making. (Hall et al.)
+      </p>
+      <StressResponse />
+      <p>
+        Over time, repeated exposure to these alerts, especially during
+        nighttime hours, can contribute to chronic stress-related health issues,
+        such as cardiovascular strain and sleep disturbances. Traditional alarm
+        tones cause significant heart rate spikes, impacting the readiness and
+        mental clarity of emergency responders. (MacNeal et al.)
       </p>
     </section>
   </StrictMode>

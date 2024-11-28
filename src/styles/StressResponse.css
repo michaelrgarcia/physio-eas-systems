@@ -1,0 +1,58 @@
+.stress-response {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 40px;
+
+  margin: 20px 0;
+}
+
+.heart {
+  width: 80px;
+  filter: invert(29%) sepia(35%) saturate(4429%) hue-rotate(322deg)
+    brightness(91%) contrast(91%);
+
+  animation: heartbeat 1s infinite;
+}
+
+.alarm {
+  background: url(../assets/alarm-light.svg) no-repeat;
+  background-position: center;
+
+  padding: 35px;
+}
+
+.alarm.on {
+  animation: vibrate 0.2s infinite;
+}
+
+.alarm.off {
+  animation: none;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes vibrate {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+}

@@ -7,6 +7,7 @@ import WEASymbol from "./assets/WEAsymbol.png";
 
 import EmergencyGenerator from "./components/EmergencyGenerator.jsx";
 import StressResponse from "./components/StressResponse.jsx";
+import WeaGenerator from "./components/WeaGenerator.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -85,7 +86,33 @@ createRoot(document.getElementById("root")).render(
         nighttime hours, can contribute to chronic stress-related health issues,
         such as cardiovascular strain and sleep disturbances. Traditional alarm
         tones cause significant heart rate spikes, impacting the readiness and
-        mental clarity of emergency responders. (MacNeal et al.)
+        mental clarity of emergency responders, for example. (MacNeal et al.)
+      </p>
+    </section>
+    <section className="wea-benefits">
+      <h2>The Benefits of WEAs Over EAS</h2>
+      <p>
+        Unlike the EAS, WEAs use text-based notifications delivered to mobile
+        devices. This minimizes the startling effects of loud broadcast tones
+        and reduces the acute stress responses often associated with traditional
+        alert systems (Georgia Institute of Technology).
+      </p>
+      <p>
+        WEAs provide targeted, location-specific alerts, which avoid unnecessary
+        notifications for unaffected populations. This precision fosters a sense
+        of control, reducing anxiety and cognitive overload (RAND Corporation).
+        Additionally, WEAs allow for concise messaging that improves situational
+        awareness (University of California, Los Angeles).
+      </p>
+      <div className="interactive-wea">
+        <WeaGenerator />
+      </div>
+      <p>
+        However, as highlighted by Ellcessor, WEAs may reinforce inequalities in
+        access to emergency information. Communities without access to mobile
+        technology or reliable network coverage are less likely to benefit from
+        these alerts, leaving underserved populations more vulnerable during
+        emergencies.
       </p>
     </section>
   </StrictMode>

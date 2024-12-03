@@ -31,6 +31,10 @@
   animation: none;
 }
 
+.stress-response > span {
+  font-weight: bold;
+}
+
 @keyframes heartbeat {
   0%,
   100% {

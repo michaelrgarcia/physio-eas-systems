@@ -49,6 +49,7 @@ function StressResponse() {
           onClick={toggleAlarm}
         ></button>
       )}
+      <span>⬅️ Click!</span>
     </div>
   );
 }

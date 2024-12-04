@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { Howl } from "howler";
 
-import "../styles/EmergencyGenerator.css";
+import "../styles/WeaGenerator.css";
 
-import EASSound from "../assets/sounds/eas-alert-usa.mp3";
+import WEASound from "../assets/sounds/wea-sound.mp3";
+
+import BatterySvg from "../assets/battery-60.svg";
+import SignalSvg from "../assets/signal-cellular-2.svg";
+import WifiSvg from "../assets/wifi.svg";
+import AlertSvg from "../assets/alert-outline.svg";
 
 function Disclaimer({ toggleVisibility }) {
   return (
@@ -24,7 +29,54 @@ function Disclaimer({ toggleVisibility }) {
   );
 }
 
-function GeneratorFunctionality() {
+function PhoneScreen({ dateInfo, alert }) {
+  if (!alert) {
+    return <div className="screen off"></div>;
+  } else if (alert === "Generating...") {
+    return (
+      <div className="screen off">
+        <p className="wea-generating">{alert}</p>
+      </div>
+    );
+  } else if (alert === "Error generating alert. Please try again.") {
+    return <div className="screen off">{alert}</div>;
+  } else {
+    return (
+      <div className="screen on">
+        <div className="top-wrapper">
+          <div className="phone-status">
+            <p className="carrier">Carrier</p>
+            <div className="status-icons">
+              <img src={SignalSvg} alt="" />
+              <img src={WifiSvg} alt="" />
+              <img src={BatterySvg} alt="" />
+            </div>
+          </div>
+          <div className="date-info">
+            <p className="date">{dateInfo.currentDate}</p>
+            <p className="time">{dateInfo.currentTime}</p>
+          </div>
+        </div>
+        <div className="bottom-wrapper">
+          {alert ? (
+            <div className="alert-notification">
+              <img src={AlertSvg} alt="" />
+              <div className="alert-body">
+                <p className="title">Emergency Alert</p>
+                <p className="info">{alert}</p>
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+          <div className="swipe-bar"></div>
+        </div>
+      </div>
+    );
+  }
+}
+
+function GeneratorFunctionality({ dateInfo }) {
   const [alertType, setAlertType] = useState("national");
   const [alert, setAlert] = useState("");
   const [soundOn, setSoundOn] = useState(true);
@@ -47,7 +99,7 @@ function GeneratorFunctionality() {
 
   function playEASSound() {
     const easSound = new Howl({
-      src: [EASSound],
+      src: [WEASound],
       volume: 0.5,
       html5: true,
       onplay: () => {
@@ -83,7 +135,6 @@ function GeneratorFunctionality() {
         setAlert(formattedAlert);
 
         if (soundOn) {
-          console.log("im supposed to be playing");
           playEASSound();
         }
       } else {
@@ -97,10 +148,11 @@ function GeneratorFunctionality() {
   }
   return (
     <>
-      <p className="eas-disclaimer">
-        Any events depicted below are purely fictional.
+      <p className="wea-disclaimer">
+        Any events depicted below are purely fictional. This is merely a
+        semi-realistic depiction of a WEA.
       </p>
-      <div className="screen">{alert}</div>
+      <PhoneScreen dateInfo={dateInfo} alert={alert} />
       <div className="controls">
         <div className="alert-type">
           <span>Select an alert type:</span>
@@ -112,7 +164,6 @@ function GeneratorFunctionality() {
             <option value="national">National/Presidential</option>
             <option value="imminent">Imminent Threat</option>
             <option value="amber">AMBER Alert</option>
-            <option value="pubsafety">Public Safety</option>
           </select>
         </div>
         <div className="control-buttons">
@@ -142,24 +193,70 @@ function GeneratorFunctionality() {
   );
 }
 
+const dayNames = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 function Generator({ visible }) {
+  const now = new Date();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+
+  if (hours > 12) {
+    hours -= 12;
+  }
+
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+
+  const weekday = dayNames[now.getDay()];
+  const month = monthNames[now.getMonth()];
+  const monthday = now.getDate();
+
+  const dateInfo = {
+    currentDate: `${weekday}, ${month} ${monthday}`,
+    currentTime: `${hours}:${minutes}`,
+  };
+
   if (!visible) {
     return (
-      <div className="emergency-generator blurred">
-        <GeneratorFunctionality />
+      <div className="wea-generator blurred">
+        <GeneratorFunctionality dateInfo={dateInfo} />
       </div>
     );
   } else {
     return (
-      <div className="emergency-generator">
-        <GeneratorFunctionality />
+      <div className="wea-generator">
+        <GeneratorFunctionality dateInfo={dateInfo} />
       </div>
     );
   }
 }
 
-function EmergencyGenerator() {
-  const [visible, setVisible] = useState(false);
+function WeaGenerator() {
+  const [visible, setVisible] = useState(true); // change to false after done
 
   function toggleVisibility() {
     setVisible(!visible);
@@ -177,4 +274,4 @@ function EmergencyGenerator() {
   }
 }
 
-export default EmergencyGenerator;
+export default WeaGenerator;

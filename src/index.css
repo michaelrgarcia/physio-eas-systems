@@ -105,7 +105,8 @@ button:focus-visible {
 }
 
 .eas-disclaimer,
-.wea-disclaimer {
+.wea-disclaimer,
+.rampup-disclaimer {
   font-weight: bold;
 }
 

@@ -8,6 +8,7 @@ import WEASymbol from "./assets/WEAsymbol.png";
 import EmergencyGenerator from "./components/EmergencyGenerator.jsx";
 import StressResponse from "./components/StressResponse.jsx";
 import WeaGenerator from "./components/WeaGenerator.jsx";
+import AlarmRampup from "./components/AlarmRampup.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -108,11 +109,53 @@ createRoot(document.getElementById("root")).render(
         <WeaGenerator />
       </div>
       <p>
-        However, as highlighted by Ellcessor, WEAs may reinforce inequalities in
-        access to emergency information. Communities without access to mobile
-        technology or reliable network coverage are less likely to benefit from
-        these alerts, leaving underserved populations more vulnerable during
-        emergencies.
+        However, WEAs may reinforce inequalities in access to emergency
+        information. Communities without access to mobile technology or reliable
+        network coverage are less likely to benefit from these alerts, leaving
+        underserved populations more vulnerable during emergencies (Ellcessor).
+      </p>
+    </section>
+    <section className="improving-eas">
+      <h2>Improving Emergency Alert Systems</h2>
+      <p>
+        To maximize the effectiveness of emergency alert systems while
+        addressing stress and accessibility concerns, several improvements can
+        be implemented. Gradually increasing the volume of alerts can reduce
+        heart rate spikes and mitigate stress responses (MacNeal et al.).
+      </p>
+      <p className="rampup-disclaimer">
+        Click &quot;Start&quot; to hear a ramp-up tone! This is not an actual
+        alarm—it is a demonstration of concept.
+      </p>
+      <AlarmRampup />
+      <p>
+        Along with this, adding visual aids like maps and improving message
+        clarity can reduce confusion and increase comprehension (University of
+        California, Los Angeles).
+      </p>
+      <p>
+        Accessibility gaps can be addressed by subsidizing mobile technology and
+        improving network infrastructure in underserved areas, making WEAs more
+        equitable (Ellcessor).
+      </p>
+      <p>
+        Implementing quieter tones for nighttime alerts can minimize sleep
+        disruptions and long-term health risks (Hall et al.). Allowing users to
+        customize alert tones and styles can improve user experience and reduce
+        unnecessary stress (Georgia Institute of Technology).
+      </p>
+    </section>
+    <section className="conclusion">
+      <h2>Conclusion</h2>
+      <p>
+        Both EAS and WEAs play crucial roles in emergency communication, but
+        their impact on the public varies based on their design and delivery.
+        While WEAs demonstrate clear advantages in reducing stress responses and
+        improving alert precision, addressing inequities in access is essential
+        for ensuring universal effectiveness. Incorporating ramp-up tones,
+        enhancing WEA capabilities, and prioritizing accessibility can create an
+        all-around more considerate alert system, which would ultimately save
+        more lives.
       </p>
     </section>
   </StrictMode>

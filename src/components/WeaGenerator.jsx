@@ -183,8 +183,8 @@ function GeneratorFunctionality() {
   return (
     <>
       <p className="wea-disclaimer">
-        Any events depicted below are purely fictional. This is merely a
-        semi-realistic depiction of a WEA.
+        Any events depicted below are fictional. This is merely a semi-realistic
+        depiction of a WEA.
       </p>
       <PhoneScreen alert={alert} />
       <div className="controls">

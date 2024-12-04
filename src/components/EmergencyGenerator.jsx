@@ -83,7 +83,6 @@ function GeneratorFunctionality() {
         setAlert(formattedAlert);
 
         if (soundOn) {
-          console.log("im supposed to be playing");
           playEASSound();
         }
       } else {
@@ -142,22 +141,6 @@ function GeneratorFunctionality() {
   );
 }
 
-function Generator({ visible }) {
-  if (!visible) {
-    return (
-      <div className="emergency-generator blurred">
-        <GeneratorFunctionality />
-      </div>
-    );
-  } else {
-    return (
-      <div className="emergency-generator">
-        <GeneratorFunctionality />
-      </div>
-    );
-  }
-}
-
 function EmergencyGenerator() {
   const [visible, setVisible] = useState(false);
 
@@ -169,11 +152,17 @@ function EmergencyGenerator() {
     return (
       <>
         <Disclaimer toggleVisibility={toggleVisibility} />
-        <Generator visible={visible} />
+        <div className="emergency-generator blurred">
+          <GeneratorFunctionality />
+        </div>
       </>
     );
   } else {
-    return <Generator visible={visible} />;
+    return (
+      <div className="emergency-generator">
+        <GeneratorFunctionality />
+      </div>
+    );
   }
 }
 

@@ -61,7 +61,7 @@ function GeneratorFunctionality() {
   }
 
   async function generateEmergency() {
-    const generatorEndpoint = import.meta.env.VITE_GENERATOR_ENDPOINT;
+    const generatorEndpoint = import.meta.env.VITE_EASGENERATOR_ENDPOINT;
 
     setAlert("Generating alert...");
 

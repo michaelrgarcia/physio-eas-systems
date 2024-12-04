@@ -81,41 +81,29 @@ function GeneratorFunctionality({ dateInfo }) {
   const [alert, setAlert] = useState("");
   const [soundOn, setSoundOn] = useState(true);
 
-  function formatAlert(alert) {
-    const alertArray = alert.split("  \n");
-
-    return (
-      <div className="alert">
-        {alertArray.map((item, index) => (
-          <p key={index}>{item}</p>
-        ))}
-      </div>
-    );
-  }
-
   function toggleSound() {
     setSoundOn(!soundOn);
   }
 
-  function playEASSound() {
-    const easSound = new Howl({
+  function playWEASound() {
+    const weaSound = new Howl({
       src: [WEASound],
-      volume: 0.5,
+      volume: 0.15,
       html5: true,
       onplay: () => {
         setTimeout(() => {
-          easSound.stop();
-        }, 3000);
+          weaSound.stop();
+        }, 2500);
       },
     });
 
-    easSound.play();
+    weaSound.play();
   }
 
   async function generateEmergency() {
-    const generatorEndpoint = import.meta.env.VITE_GENERATOR_ENDPOINT;
+    const generatorEndpoint = import.meta.env.VITE_WEAGENERATOR_ENDPOINT;
 
-    setAlert("Generating alert...");
+    setAlert("Generating...");
 
     try {
       const result = await fetch(generatorEndpoint, {
@@ -130,12 +118,11 @@ function GeneratorFunctionality({ dateInfo }) {
 
       if (result.ok) {
         const data = await result.json();
-        const formattedAlert = formatAlert(data);
 
-        setAlert(formattedAlert);
+        setAlert(data);
 
         if (soundOn) {
-          playEASSound();
+          playWEASound();
         }
       } else {
         throw new Error("Error generating alert.");
@@ -146,6 +133,7 @@ function GeneratorFunctionality({ dateInfo }) {
       setAlert("Error generating alert. Please try again.");
     }
   }
+
   return (
     <>
       <p className="wea-disclaimer">

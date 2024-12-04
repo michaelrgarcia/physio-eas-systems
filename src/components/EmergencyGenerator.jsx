@@ -97,7 +97,8 @@ function GeneratorFunctionality() {
   return (
     <>
       <p className="eas-disclaimer">
-        Any events depicted below are purely fictional.
+        Any events depicted below are purely fictional. This is merely a
+        semi-realistic depiction of the EAS system.
       </p>
       <div className="screen">{alert}</div>
       <div className="controls">

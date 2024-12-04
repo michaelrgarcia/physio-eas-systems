@@ -29,7 +29,53 @@ function Disclaimer({ toggleVisibility }) {
   );
 }
 
-function PhoneScreen({ dateInfo, alert }) {
+const dayNames = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+function PhoneScreen({ alert }) {
+  const now = new Date();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+
+  if (hours > 12) {
+    hours -= 12;
+  }
+
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+
+  const weekday = dayNames[now.getDay()];
+  const month = monthNames[now.getMonth()];
+  const monthday = now.getDate();
+
+  const dateInfo = {
+    currentDate: `${weekday}, ${month} ${monthday}`,
+    currentTime: `${hours}:${minutes}`,
+  };
+
   if (!alert) {
     return <div className="screen off"></div>;
   } else if (alert === "Generating...") {
@@ -76,7 +122,7 @@ function PhoneScreen({ dateInfo, alert }) {
   }
 }
 
-function GeneratorFunctionality({ dateInfo }) {
+function GeneratorFunctionality() {
   const [alertType, setAlertType] = useState("national");
   const [alert, setAlert] = useState("");
   const [soundOn, setSoundOn] = useState(true);
@@ -140,7 +186,7 @@ function GeneratorFunctionality({ dateInfo }) {
         Any events depicted below are purely fictional. This is merely a
         semi-realistic depiction of a WEA.
       </p>
-      <PhoneScreen dateInfo={dateInfo} alert={alert} />
+      <PhoneScreen alert={alert} />
       <div className="controls">
         <div className="alert-type">
           <span>Select an alert type:</span>
@@ -181,70 +227,8 @@ function GeneratorFunctionality({ dateInfo }) {
   );
 }
 
-const dayNames = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-
-const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
-function Generator({ visible }) {
-  const now = new Date();
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
-
-  if (hours > 12) {
-    hours -= 12;
-  }
-
-  if (minutes < 10) {
-    minutes = "0" + minutes;
-  }
-
-  const weekday = dayNames[now.getDay()];
-  const month = monthNames[now.getMonth()];
-  const monthday = now.getDate();
-
-  const dateInfo = {
-    currentDate: `${weekday}, ${month} ${monthday}`,
-    currentTime: `${hours}:${minutes}`,
-  };
-
-  if (!visible) {
-    return (
-      <div className="wea-generator blurred">
-        <GeneratorFunctionality dateInfo={dateInfo} />
-      </div>
-    );
-  } else {
-    return (
-      <div className="wea-generator">
-        <GeneratorFunctionality dateInfo={dateInfo} />
-      </div>
-    );
-  }
-}
-
 function WeaGenerator() {
-  const [visible, setVisible] = useState(true); // change to false after done
+  const [visible, setVisible] = useState(false);
 
   function toggleVisibility() {
     setVisible(!visible);
@@ -254,11 +238,17 @@ function WeaGenerator() {
     return (
       <>
         <Disclaimer toggleVisibility={toggleVisibility} />
-        <Generator visible={visible} />
+        <div className="wea-generator blurred">
+          <GeneratorFunctionality />
+        </div>
       </>
     );
   } else {
-    return <Generator visible={visible} />;
+    return (
+      <div className="wea-generator">
+        <GeneratorFunctionality />
+      </div>
+    );
   }
 }
 

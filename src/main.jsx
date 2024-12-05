@@ -80,7 +80,7 @@ createRoot(document.getElementById("root")).render(
         Activation of the HPA axis leads to the release of cortisol, which supports metabolism and energy mobilization, while the sympathoadrenal system releases catecholamines like epinephrine and norepinephrine, causing immediate physiological changes such as increased heart rate and blood pressure. (Hall et al., PLOS ONE)
       </p>
       <p>
-        Research indicates that loud, abrupt emergency tones can exacerbate acute stress responses, impairing cognitive functions and decision-making. For example, elevated cortisol and rapid shifts in heart rate variability due to sudden alarms can impair problem-solving abilities under stress. (Hall et al., PLOS ONE)
+        Research indicates that loud, abrupt emergency tones can exacerbate acute stress responses, impairing cognitive functions and decision-making. For example, elevated cortisol and rapid shifts in heart rate due to sudden alarms can impair problem-solving abilities under stress. (Hall et al., PLOS ONE)
       </p>
       <StressResponse />
       <p>

@@ -69,8 +69,8 @@ createRoot(document.getElementById("root")).render(
       <p>
         Clearly, EAS broadcasts can reach broad audiences but rely on loud,
         intrusive tones and wide dissemination. This approach often leads to
-        over-alerting, which risks desensitizing the public and creating
-        unnecessary stress responses. (Georgia Institute of Technology)
+        action, but it may do so by evoking
+        unnecessarily excessive stress responses. (Georgia Institute of Technology)
       </p>
       <h2>The Physiological Stress Response and Emergency Alerts</h2>
       <p>
@@ -109,7 +109,7 @@ createRoot(document.getElementById("root")).render(
         <WeaGenerator />
       </div>
       <p>
-        However, WEAs may reinforce inequalities in access to emergency
+        However, the reduced acute stress responses from WEAs may lead to less action from those who receive them (Georgia Institute of Technology). WEAs may also reinforce inequalities in access to emergency
         information. Communities without access to mobile technology or reliable
         network coverage are less likely to benefit from these alerts, leaving
         underserved populations more vulnerable during emergencies (Ellcessor).
@@ -151,7 +151,7 @@ createRoot(document.getElementById("root")).render(
         Both EAS and WEAs play crucial roles in emergency communication, but
         their impact on the public varies based on their design and delivery.
         While WEAs demonstrate clear advantages in reducing stress responses and
-        improving alert precision, addressing inequities in access is essential
+        improving alert precision, aiming for actionable responses and adressing inequities in access is essential
         for ensuring universal effectiveness. Incorporating ramp-up tones,
         enhancing WEA capabilities, and prioritizing accessibility can create an
         all-around more considerate alert system, which would ultimately save

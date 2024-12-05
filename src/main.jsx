@@ -74,12 +74,13 @@ createRoot(document.getElementById("root")).render(
       </p>
       <h2>The Physiological Stress Response and Emergency Alerts</h2>
       <p>
-        Emergency alerts are known to trigger the body’s physiological stress
-        response, a survival mechanism that prepares the body for threats. This
-        response consists of an increased heart rate, elevated cortisol levels,
-        and heightened arousal. Research indicates that loud, abrupt emergency
-        tones can exacerbate acute stress responses, impairing cognitive
-        functions and decision-making. (Hall et al.)
+        Emergency alerts are known to trigger the body’s physiological stress response, a survival mechanism that prepares the body for threats. 
+        This response consists of an increased heart rate, elevated cortisol levels, and heightened arousal. 
+        The human stress response operates primarily through two pathways: the hypothalamic-pituitary-adrenal (HPA) axis and the sympathoadrenal system. 
+        Activation of the HPA axis leads to the release of cortisol, which supports metabolism and energy mobilization, while the sympathoadrenal system releases catecholamines like epinephrine and norepinephrine, causing immediate physiological changes such as increased heart rate and blood pressure. (Hall et al., PLOS ONE)
+      </p>
+      <p>
+        Research indicates that loud, abrupt emergency tones can exacerbate acute stress responses, impairing cognitive functions and decision-making. For example, elevated cortisol and rapid shifts in heart rate variability due to sudden alarms can impair problem-solving abilities under stress. (Hall et al., PLOS ONE)
       </p>
       <StressResponse />
       <p>
